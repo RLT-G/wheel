@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Рулетка OMEGAGPT</title>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Шапка -->
+        <div class="top_data">
+            <div class="name">
+                <span class="name-text">РУЛЕТКА OMEGAGPT</span>
+                <div class="logo"></div>
+            </div>
+            <div class="user_data">
+                <div class="user_data__main">
+                    <div class="user_data__logo"></div>
+                    <div class="user_data__text">
+                        <span id="username" class="user_data__username">Username</span>
+                        <span id="refer" class="user_data__refer">Пришел от: @usname</span>
+                    </div>
+                </div>
+                <div class="balance">
+                    <span id="balance" class="balance__text">Баланс: 155₽</span>
+                </div>
+            </div>
+            <div class="withdrawal">
+                <button class="withdrawal__btn">Вывести</button>
+            </div>
+        </div>
+
+        <!-- Рулетка -->
+        <div class="wheel" id="wheel">
+            <div class="wheel__wrapper">
+                <div class="slice" style="--i: 0;">
+                    <span class="slice__value">15 ₽</span>
+                </div>
+                <div class="slice" style="--i: 1;">
+                    <span class="slice__value">100 ₽</span>
+                </div>
+                <div class="slice" style="--i: 2;">
+                    <span class="slice__value">5 ₽</span>
+                </div>
+                <div class="slice" style="--i: 3;">
+                    <span class="slice__value">25 ₽</span>
+                </div>
+                <div class="slice" style="--i: 4;">
+                    <span class="slice__value">250 ₽</span>
+                </div>
+                <div class="slice" style="--i: 5;">
+                    <span class="slice__value">10 ₽</span>
+                </div>
+                <div class="slice" style="--i: 6;">
+                    <span class="slice__value">50 ₽</span>
+                </div>
+                <div class="slice" style="--i: 7;">
+                    <span class="slice__value">500 ₽</span>
+                </div>
+                <div class="slice" style="--i: 8;">
+                    <span class="slice__value">1 ₽</span>
+                </div>
+                <div class="wheel__center"></div>
+            </div>
+            <div class="whheel_border"></div>
+        </div>
+
+        <!-- Футер -->
+        <div class="lower_data">
+            <div class="data">
+                <div class="data__accounts">
+                    <div class="data__accounts_wrapper">
+                        <span class="data__accounts_title">Топ аккаунтов</span>
+                        <span class="data__accounts_top top1">1. Алёна 350₽</span>
+                        <span class="data__accounts_top top2">2. Алёна 350₽</span>
+                        <span class="data__accounts_top top3">3. Алёна 350₽</span>
+                        <span class="data__accounts_top top4">4. Алёна 350₽</span>
+                        <span class="data__accounts_top top5">5. Алёна 350₽</span>
+                    </div>
+                </div>
+                <div class="data__wheel">
+                    <span id="rotation_count" class="data__wheel_rotations">Вращений: 3</span>
+                    <span id="invited_count" class="data__wheel_invited">Приглашено: 15</span> 
+                    <span id="earned_count" class="data__wheel_earned">Заработано: 155₽</span> 
+                </div>
+            </div>
+            <div class="links">
+                <button class="links__btn">Пригласи друга - Получи вращение!</button>
+                <span class="links__text">Ваша ссылка: 
+                    <a id="link" href="https://www.youtube.com/@A4a4a4a4">
+                        https://www.youtube.com/@A4a4a4a4
+                    </a>
+                </span>
+            </div>
+            <div class="info">
+                <button class="info__btn-1">Инструкция</button>
+                <button class="info__btn-2">Написать менеджеру</button>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
