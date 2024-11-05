@@ -87,10 +87,10 @@ const init = () => {
     if (initValue){
         user_id = initValue.user_id;
         link = initValue.link; 
-        earned_count = initValue.earned_count === "False" ? 0 : initValue.earned_count; 
+        earned_count = Number(initValue.earned_count)
         invited_count = initValue.invited_count; 
         rotation_count = initValue.rotation_count; 
-        balance = initValue.balance === "False" ? 0 : initValue.balance; 
+        balance = Number(initValue.balance)
         username = initValue.username; 
         refer = initValue.refer; 
         updateData();
