@@ -53,7 +53,7 @@ const closePopup = () => {
 
 
 const getSliceIndex = async (id) => {
-    const response = await fetch("http://192.168.1.102/api/index", {
+    const response = await fetch("https://itkaba.xyz/api/index", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -87,10 +87,10 @@ const init = () => {
     if (initValue){
         user_id = initValue.user_id;
         link = initValue.link; 
-        earned_count = initValue.earned_count; 
+        earned_count = initValue.earned_count === "False" ? 0 : initValue.earned_count; 
         invited_count = initValue.invited_count; 
         rotation_count = initValue.rotation_count; 
-        balance = initValue.balance; 
+        balance = initValue.balance === "False" ? 0 : initValue.balance; 
         username = initValue.username; 
         refer = initValue.refer; 
         updateData();
