@@ -99,16 +99,17 @@ const init = () => {
     document.querySelector('.wheel')
         .addEventListener('click', async () => {
             const sliceIndex = await getSliceIndex();
-            if (sliceIndex != null && sliceIndex !=undefined) setSlice(sliceIndex);
-            let amount = [15, 100, 5, 25, 250, 10, 50, 500, 1] 
-            console.log(amount[sliceIndex])
-            setTimeout(() => {
-                openPopup(`Поздравляем, вы получили ${amount[sliceIndex]}₽`)
-                earned_count = Number(earned_count) + amount[sliceIndex]
-                balance = Number(balance) + amount[sliceIndex]
-                rotation_count -= 1
-                updateData();
-            }, 17000);
+            if (sliceIndex != null && sliceIndex !=undefined) {
+                setSlice(sliceIndex);
+                let amount = [15, 100, 5, 25, 250, 10, 50, 500, 1] 
+                setTimeout(() => {
+                    openPopup(`Поздравляем, вы получили ${amount[sliceIndex]}₽`)
+                    earned_count = Number(earned_count) + amount[sliceIndex]
+                    balance = Number(balance) + amount[sliceIndex]
+                    rotation_count -= 1
+                    updateData();
+                }, 17000);
+            }
     })
 
     document.querySelector('.close_popup')
