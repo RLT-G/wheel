@@ -45,6 +45,10 @@ html{
 }
 *, *::before, *::after{
     box-sizing: inherit;
+	-webkit-user-select: none; /* Safari и Chrome */
+	-moz-user-select: none;    /* Firefox */
+	-ms-user-select: none;     /* Internet Explorer и Edge */
+	user-select: none;         /* Стандарт */
 }
 a{
     text-decoration: none;

@@ -23,9 +23,11 @@ body {
     flex-direction: column;
     width: 100%;
     height: 100vh;
-    padding: 30px 15px;
+    min-height: 100vh;
+    padding: 15px;
     justify-content: space-between;
-    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
     position: relative;
 }
 
@@ -128,7 +130,7 @@ body {
     background-color: #dfc7a4;
     font-family: var(--font-family);
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 0.01em;
     text-align: center;
     color: #000;
@@ -149,6 +151,8 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 .wheel__wrapper{
     height: 100%;
@@ -172,8 +176,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
-    color: #000;
     background-color: black;
 }
 .whheel_border{
@@ -185,6 +187,9 @@ body {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
     border-radius: 50%;
     cursor: pointer;
+    -webkit-box-shadow: 0px 0px 50px 10px rgba(255, 255, 255, 0.2);
+-moz-box-shadow: 0px 0px 50px 10px rgba(255, 255, 255, 0.2);
+box-shadow: 0px 0px 50px 10px rgba(255, 255, 255, 0.2);
 }
 .slice:nth-child(1){
     background: linear-gradient(0deg, #32060e 0%, #a12012 120%);
@@ -216,22 +221,32 @@ body {
 
 .slice__value{
     position: relative;
-    left: 10px;
-    top: -30px;
-    transform: rotate(-15deg);
-    color: #FFF;
+    left: 15px;
+    top: -25px;
+    transform: rotate(-20deg);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.85);
 }
 .wheel::before{
     content: '';
     display: block;
-    background-color: #aa8847;
+    background-color: #806124;
     position: absolute;
     width: 10px;
     height: 15px;
-    clip-path: polygon(50% 0%, 20% 100%, 80% 100%);
+    clip-path: polygon(50% 0%, 10% 100%, 90% 100%);
     top: calc(50% - 7.5px - 25px);
     left: calc(50% - 5px);
     z-index: 1;
+    /* filter: drop-shadow(0px 50px 50px rgba(0, 0, 0, 1)); */
+    /* -webkit-box-shadow: 0px 0px 50px 58px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 50px 58px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 50px 58px rgba(0, 0, 0, 0.2); */
+    /* stroke-width: 5px;
+    stroke: #FFF;
+    filter: drop-shadow(0px 0px 100px white); */
 }
 .wheel::after{
     content: '';
@@ -288,19 +303,21 @@ body {
 .data__accounts{
     width: 50%;
     height: 100%;
-    padding-right: 10%;
+    /* padding-right: 10%; */
 }
 .data__accounts_wrapper{
     display: flex;
     flex-direction: column;
     background-color: #dfc7a4;
-    gap: 5px;
+    gap: 2px;
     padding: 10px 0px 10px 0px;
     height: 100%;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     border-radius: 0 18px 18px 0;
     position: relative;
     /* overflow: hidden; */
+    /* width: auto; */
+    max-width: 110px;
 }
 .data__accounts_wrapper::before{
     content: '';
@@ -321,7 +338,7 @@ body {
 .data__accounts_top{
     font-family: var(--font-family);
     font-weight: 500;
-    font-size: 8px;
+    font-size: 10px;
     color: rgba(0, 0, 0, 0.85);
 }
 .data__wheel{
@@ -349,6 +366,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 24px;
 }
 .links__btn{
     width: 100%;
@@ -368,6 +387,7 @@ body {
     cursor: pointer;
     border: none;
     transition: 1.0s;
+    min-height: 45px;
 }
 .links__btn.click{
     background: none;
@@ -401,7 +421,7 @@ body {
     background-color: #dfc7a4;
     font-family: var(--font-family);
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     color: #000;
     padding: 0px 10px 0px 10px;
@@ -431,7 +451,6 @@ body {
     border-radius: 5px;
     position: relative;
     padding: 15px;
-    padding-top: 25px;
 }
 .popup__content_text{
     display: flex;
@@ -452,4 +471,5 @@ body {
     width: 15px;
     height: 15px;
     fill: #000;
+    cursor: pointer;
 }

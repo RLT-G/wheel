@@ -77,7 +77,7 @@ const updateData = () => {
     insertData(`Вращений: ${String(rotation_count)}`, 'rotation_count')
     insertData(`Баланс: ${String(balance)}₽`, 'balance')
     insertData(String(username), 'username')
-    insertData(String(refer) === '0' ? '' : `Пришел от: ${String(refer)}`, 'refer')
+    insertData(String(refer) === '0' ? 'Пришел от: ----' : `Пришел от: ${String(refer)}`, 'refer')
 }
 
 
@@ -137,7 +137,7 @@ const init = () => {
 
     document.querySelector('.info__btn-1')
         .addEventListener('click', () => {
-            window.location.href = 'https://vk.com/@-227915984-effektivnoe-privlechenie-polzovatelei-i-reklamodatelei-v-bot';
+            window.location.href = 'https://telegra.ph/Instrukciya-k-Ruletke-OMEGA1-GPT-11-06';
     })
 
     document.querySelector('.info__btn-2')
