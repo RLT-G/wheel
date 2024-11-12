@@ -45,12 +45,14 @@ function insertData(input, divId) {
 
 const openPopup = (msg) => {
     document.querySelector('.popup').classList.add('active');
-    insertData(msg, 'popup__content_text')
+    insertData(msg, 'popup__content_text');
+    document.body.style.overflow = 'hidden';
 }
 
 
 const closePopup = () => {
     document.querySelector('.popup').classList.remove('active');
+    document.body.style.overflow = '';
 }
 
 
