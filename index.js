@@ -1,6 +1,8 @@
 let wheelCount = 0;
 let user_id, link, earned_count, invited_count, rotation_count, balance, username, refer; 
 
+link = "https://tg.me?start=DSJKFSDLSDJKFLDSJFKLSDLJKFJKSDJLKFDSHJKLKJHSDKSKDFJHF";
+
 const getParams = (param) => {
     const urlParams = new URLSearchParams(window.location.search);
     const encodedParam = urlParams.get(param);
@@ -20,7 +22,7 @@ const rotateWheel = (degrees) => {
 
 
 const setSlice = (sliceIndex) => {
-    const sliceDegrees = [17, -23, -63, -103, -143, -183, -223, -263, -303];
+    const sliceDegrees = [18, -22, -62, -102, -142, -182, -222, -262, -302];
     let degrees = sliceDegrees[sliceIndex] + (Math.floor(Math.random() * 15) - 7)
     if (wheelCount % 2 === 0) degrees -= 3600;
     else degrees += 3600;
@@ -77,7 +79,7 @@ const updateData = () => {
     insertData(`Вращений: ${String(rotation_count)}`, 'rotation_count')
     insertData(`Баланс: ${String(balance)}₽`, 'balance')
     insertData(String(username), 'username')
-    insertData(String(refer) === '0' ? 'Пришел от: ----' : `Пришел от: ${String(refer)}`, 'refer')
+    insertData(String(refer) === '0' ? 'Пришел от: —' : `Пришел от: ${String(refer)}`, 'refer')
 }
 
 
@@ -93,8 +95,8 @@ const init = () => {
         balance = initValue.balance === "False" ? initValue.balance : 0
         username = initValue.username; 
         refer = initValue.refer; 
-        updateData();
     }
+    updateData();
 
     document.querySelector('.wheel')
         .addEventListener('click', async () => {
@@ -137,7 +139,7 @@ const init = () => {
 
     document.querySelector('.info__btn-1')
         .addEventListener('click', () => {
-            window.location.href = 'https://telegra.ph/Instrukciya-k-Ruletke-OMEGA1-GPT-11-06';
+            window.location.href = 'https://teletype.in/@omega_gpt/omega_roulette';
     })
 
     document.querySelector('.info__btn-2')
