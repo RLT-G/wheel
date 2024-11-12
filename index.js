@@ -92,7 +92,7 @@ const init = () => {
         earned_count = initValue.earned_count === "False" ? initValue.earned_count : 0
         invited_count = initValue.invited_count; 
         rotation_count = initValue.rotation_count; 
-        balance = initValue.balance === "False" ? initValue.balance : 0
+        balance = initValue.balance
         username = initValue.username; 
         refer = initValue.refer; 
     }
