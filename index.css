@@ -136,8 +136,6 @@ body {
     text-align: center;
     color: #000;
     cursor: pointer;
-    position: relative;
-    bottom: 10px;
     transition: 0.2s;
 }
 .withdrawal__btn:hover{
