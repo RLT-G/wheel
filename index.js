@@ -1,7 +1,7 @@
 let wheelCount = 0;
 let user_id, link, earned_count, invited_count, rotation_count, balance, username, refer; 
+let isRotating = false;
 
-link = "https://tg.me?start=DSJKFSDLSDJKFLDSJFKLSDLJKFJKSDJLKFDSHJKLKJHSDKSKDFJHF";
 
 const getParams = (param) => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -16,8 +16,11 @@ const getParams = (param) => {
 
 
 const rotateWheel = (degrees) => {
+    if (isRotating) return;
+    isRotating = true;
     const wheel = document.querySelector('.wheel__wrapper');
     wheel.style.transform = `rotate(${degrees}deg)`;
+    setTimeout(() => isRotating = false, 17000);
 }
 
 
@@ -74,7 +77,36 @@ const getSliceIndex = async (id) => {
 };
 
 
-const updateData = () => {
+const getUserStats = async (user_id) => {
+    try {
+        const response = await fetch("https://itkaba.xyz/api/user_stats", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ id: user_id })
+        });
+
+        const data = await response.json();
+
+        if (data.status === "ok" && data.data) {
+            earned_count = data.data.earnedCount;
+            invited_count = data.data.invited_count;
+            rotation_count = data.data.rotation_count;
+            balance = data.data.balance;
+        } else {
+            console.error("Failed to retrieve user stats:", data);
+            return null;
+        }
+    } catch (error) {
+        console.error("Error fetching user stats:", error);
+        return null;
+    }
+};
+
+
+const updateData = async () => {
+    await getUserStats(user_id);
     insertData(`${String(link)}`, 'link')
     insertData(`Заработано: ${String(earned_count)}₽`, 'earned_count')
     insertData(`Приглашено: ${String(invited_count)}`, 'invited_count')
@@ -85,7 +117,7 @@ const updateData = () => {
 }
 
 
-const init = () => {
+const init = async () => {
     const initValue = getParams("d");
     console.log(initValue)
     if (initValue){
@@ -98,11 +130,12 @@ const init = () => {
         username = initValue.username; 
         refer = initValue.refer; 
     }
-    updateData();
+    await updateData();
 
     document.querySelector('.wheel')
         .addEventListener('click', async () => {
             const sliceIndex = await getSliceIndex();
+            // const sliceIndex = 0;
             if (sliceIndex != null && sliceIndex !=undefined) {
                 setSlice(sliceIndex);
                 let amount = [15, 100, 5, 25, 250, 10, 50, 500, 1] 
