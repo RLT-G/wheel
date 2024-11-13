@@ -123,7 +123,7 @@ const init = async () => {
     if (initValue){
         user_id = initValue.user_id;
         link = initValue.link; 
-        earned_count = initValue.earned_count === "False" ? initValue.earned_count : 0
+        // earned_count = initValue.earned_count === "False" ? initValue.earned_count : 0
         invited_count = initValue.invited_count; 
         rotation_count = initValue.rotation_count; 
         balance = initValue.balance
