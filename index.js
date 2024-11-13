@@ -108,7 +108,7 @@ const getUserStats = async (user_id) => {
 const updateData = async () => {
     await getUserStats(user_id);
     insertData(`${String(link)}`, 'link')
-    insertData(`Заработано: ${String(earned_count)}₽`, 'earned_count')
+    insertData(`Заработано: ${String(balance)}₽`, 'earned_count')
     insertData(`Приглашено: ${String(invited_count)}`, 'invited_count')
     insertData(`Вращений: ${String(rotation_count)}`, 'rotation_count')
     insertData(`Баланс: ${String(balance)}₽`, 'balance')
