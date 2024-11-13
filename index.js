@@ -90,7 +90,7 @@ const getUserStats = async (user_id) => {
         const data = await response.json();
 
         if (data.status === "ok" && data.data) {
-            earned_count = data.data.earnedCount;
+            earned_count = data.data.earnedCount === "False" ? data.data.earnedCount : 0;
             invited_count = data.data.invited_count;
             rotation_count = data.data.rotation_count;
             balance = data.data.balance;
