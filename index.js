@@ -138,7 +138,7 @@ const init = async () => {
             // const sliceIndex = 0;
             if (sliceIndex != null && sliceIndex !=undefined) {
                 setSlice(sliceIndex);
-                let amount = [15, 100, 5, 25, 250, 10, 50, 500, 1] 
+                let amount = [7, 100, 5, 25, 5000, 10, 50, 500, 1] 
                 setTimeout(() => {
                     openPopup(`Поздравляем, вы получили ${amount[sliceIndex]}₽`)
                     earned_count = Number(earned_count) + amount[sliceIndex]
