@@ -182,10 +182,18 @@ const init = async () => {
             window.location.href = 'https://t.me/lolo_key';
     })
 
-    document.querySelector('.withdrawal__btn')
-        .addEventListener('click', () => {
+    const withdrawalBtn = document.querySelector('.withdrawal__btn')
+    withdrawalBtn.addEventListener('click', () => {
+        if (balance >= 30) {
             window.location.href = 'https://t.me/lolo_key';
+        } else {
+            withdrawalBtn.classList.add('need_caption')
+            setTimeout(() => {
+                withdrawalBtn.classList.remove('need_caption')
+            }, 10000)
+        }
     })
+    document.querySelector('.sd').classList.add
 
 }
 

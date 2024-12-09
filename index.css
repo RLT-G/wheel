@@ -137,12 +137,22 @@ body {
     color: #000;
     cursor: pointer;
     transition: 0.2s;
+    position: relative;
 }
 .withdrawal__btn:hover{
     background-color: #eddfca;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
-
+.withdrawal__btn.need_caption::after{
+    content: 'От 30 руб.';
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 12px;
+    position: absolute;
+    bottom: -25px;
+    left: 20px;
+    color: white;
+}
 
 
 
