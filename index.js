@@ -134,11 +134,30 @@ const init = async () => {
 
     document.querySelector('.wheel')
         .addEventListener('click', async () => {
+            
+            document.querySelectorAll('.slice .slice__value-inner').forEach(element => {
+                if (element.classList.contains('active')) {
+                    element.classList.remove('active')
+                }
+            })
+            document.querySelectorAll('.slice__value').forEach(element => {
+                if (element.classList.contains('need_anim')) {
+                    element.classList.remove('need_anim')
+                }
+            })
+
             const sliceIndex = await getSliceIndex();
-            // const sliceIndex = 0;
             if (sliceIndex != null && sliceIndex !=undefined) {
                 setSlice(sliceIndex);
                 let amount = [7, 100, 5, 25, 5000, 10, 50, 500, 1] 
+                setTimeout(() => {
+
+                    document.querySelector(`.slice:nth-child(${sliceIndex + 1}) .slice__value-inner`)
+                        .classList.add('active')
+                    document.querySelector('.slice__value')
+                        .classList.add('need_anim')
+
+                }, 16000);
                 setTimeout(() => {
                     openPopup(`Поздравляем, вы получили ${amount[sliceIndex]}₽`)
                     earned_count = Number(earned_count) + amount[sliceIndex]
@@ -174,7 +193,7 @@ const init = async () => {
 
     document.querySelector('.info__btn-1')
         .addEventListener('click', () => {
-            window.location.href = 'https://teletype.in/@omega_gpt/omega_roulette';
+            window.location.href = 'https://teletype.in/@r2lolo/omega_roulette';
     })
 
     document.querySelector('.info__btn-2')
