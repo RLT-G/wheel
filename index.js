@@ -154,7 +154,7 @@ const init = async () => {
 
                     document.querySelector(`.slice:nth-child(${sliceIndex + 1}) .slice__value-inner`)
                         .classList.add('active')
-                    document.querySelector('.slice__value')
+                    document.querySelector(`.slice:nth-child(${sliceIndex + 1}) .slice__value`)
                         .classList.add('need_anim')
 
                 }, 16000);
