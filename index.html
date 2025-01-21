@@ -15,7 +15,7 @@
         <!-- Шапка -->
         <div class="top_data">
             <div class="name">
-                <span class="name-text">РУЛЕТКА OMEGAGPT</span>
+                <span id="name-text" class="name-text">РУЛЕТКА OMEGAGPT</span>
                 <div class="logo"></div>
             </div>
             <div class="user_data">
@@ -39,34 +39,34 @@
         <div class="wheel" id="wheel">
             <div class="wheel__wrapper">
                 <div class="slice" style="--i: 0;">
-                    <span class="slice__value">15 ₽</span>
+                    <span class="slice__value">7 ₽<br><span class="slice__value-inner">25%</span></span>
                 </div>
                 <div class="slice" style="--i: 1;">
-                    <span class="slice__value">100 ₽</span>
+                    <span class="slice__value">100 ₽<br><span class="slice__value-inner">4%</span></span>
                 </div>
                 <div class="slice" style="--i: 2;">
-                    <span class="slice__value">5 ₽</span>
+                    <span class="slice__value">5 ₽<br><span class="slice__value-inner">35%</span></span>
                 </div>
                 <div class="slice" style="--i: 3;">
-                    <span class="slice__value">25 ₽</span>
+                    <span class="slice__value">25 ₽<br><span class="slice__value-inner">6%</span></span>
                 </div>
                 <div class="slice" style="--i: 4;">
-                    <span class="slice__value">250 ₽</span>
+                    <span class="slice__value">5000 ₽<br><span class="slice__value-inner">2%</span></span>
                 </div>
                 <div class="slice" style="--i: 5;">
-                    <span class="slice__value">10 ₽</span>
+                    <span class="slice__value">10 ₽<br><span class="slice__value-inner">10%</span></span>
                 </div>
                 <div class="slice" style="--i: 6;">
-                    <span class="slice__value">50 ₽</span>
+                    <span class="slice__value">50 ₽<br><span class="slice__value-inner">5%</span></span>
                 </div>
                 <div class="slice" style="--i: 7;">
-                    <span class="slice__value">500 ₽</span>
+                    <span class="slice__value">500 ₽<br><span class="slice__value-inner">3%</span></span>
                 </div>
                 <div class="slice" style="--i: 8;">
-                    <span class="slice__value">1 ₽</span>
+                    <span class="slice__value">1 ₽<br><span class="slice__value-inner">10%</span></span>
                 </div>
-                <div class="wheel__center"></div>
             </div>
+            <div class="wheel__center"></div>
             <div class="whheel_border"></div>
         </div>
 
@@ -76,11 +76,11 @@
                 <div class="data__accounts">
                     <div class="data__accounts_wrapper">
                         <span class="data__accounts_title">Топ аккаунтов</span>
-                        <span class="data__accounts_top top1">1. Алёна 350₽</span>
-                        <span class="data__accounts_top top2">2. Алёна 350₽</span>
-                        <span class="data__accounts_top top3">3. Алёна 350₽</span>
-                        <span class="data__accounts_top top4">4. Алёна 350₽</span>
-                        <span class="data__accounts_top top5">5. Алёна 350₽</span>
+                        <span class="data__accounts_top top1">1. Verse 2509₽</span>
+                        <span class="data__accounts_top top2">2. Алёна 1765₽</span>
+                        <span class="data__accounts_top top3">3. naya 1639₽</span>
+                        <span class="data__accounts_top top4">4. Victor 1533₽</span>
+                        <span class="data__accounts_top top5">5. Дмитрий 1405₽</span>
                     </div>
                 </div>
                 <div class="data__wheel">
@@ -90,16 +90,22 @@
                 </div>
             </div>
             <div class="links">
-                <button class="links__btn">Пригласи друга - Получи вращение!</button>
+                <button id="links__btn" class="links__btn">Пригласи друга - Получи вращение!</button>
                 <span class="links__text">Ваша ссылка: 
-                    <a id="link" href="https://www.youtube.com/@A4a4a4a4">
-                        https://www.youtube.com/@A4a4a4a4
-                    </a>
+                    <span id="link"></span>
                 </span>
             </div>
             <div class="info">
                 <button class="info__btn-1">Инструкция</button>
                 <button class="info__btn-2">Написать менеджеру</button>
+            </div>
+        </div>
+
+        
+        <div class="popup">
+            <div class="popup__content">
+                <div id="popup__content_text" class="popup__content_text">some text</div>
+                <svg class="close_popup" fill="#dfc7a4" height="200px" width="200px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460.775 460.775" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55 c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55 c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505 c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55 l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719 c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"></path> </g></svg>
             </div>
         </div>
     </div>
